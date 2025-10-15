@@ -1,0 +1,243 @@
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #576db2, #f6a5c0);
+  mix-blend-mode: overlay;
+  z-index: -1;
+}
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+}
+
+/* Background video */
+.video-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* Layout */
+.wrapper {
+  max-width: 1400px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.header .logo {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.header .menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  font-weight: 500;
+  font-size: clamp(0.6rem, 2vw, 1rem);
+  text-transform: uppercase;
+  color: #fffafa;
+  transition: 0.5s ease;
+  justify-content: center;
+}
+
+
+/* Content */
+.content {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 60vh;
+  flex-wrap: wrap;
+}
+
+.content .hero {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+.content .title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 900;
+  color: whitesmoke;
+  letter-spacing: 2px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content .sub-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content .description {
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 300;
+  margin-top: 10px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.content .explore {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  text-decoration: none;
+  padding: 10px 20px;
+  background: #fff;
+  color: black;
+  text-align: center;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-top: 20px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.content .explore:hover {
+  background: #2e2e2e;
+  color: #fff;
+}
+
+/* 📱 Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header .menu {
+    gap: 1rem;
+  }
+
+  .content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .content .hero {
+    align-items: center;
+  }
+
+  .content .title,
+  .content .sub-title {
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .content .description {
+    font-size: 0.9rem;
+  }
+
+  .content .explore {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+
+/* Header Menu Hover */
+.menu a {
+  position: relative;
+  text-decoration: none;
+  color: #f9f8f8;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover {
+  color: #000000;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* Explore Button Hover */
+.explore {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  text-decoration: none;
+  padding: 10px 20px;
+  background: #fff;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-top: 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.explore:hover {
+  background: #2e2e2e;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
